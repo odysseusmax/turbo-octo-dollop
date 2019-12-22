@@ -406,7 +406,7 @@ class Session:
             pass
 
         try:
-            return await self._send(data, timeout=timeout)
+            return await self._send(data)
         except (OSError, TimeoutError, InternalServerError) as e:
             if retries == 0:
                 raise e from None
@@ -417,4 +417,4 @@ class Session:
                     data.QUALNAME, e))
 
             await asyncio.sleep(0.5)
-            return await self.send(data, retries - 1, timeout)
+            return await self.send(data, retries - 1)
