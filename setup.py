@@ -31,7 +31,7 @@ with open("requirements.txt", encoding="utf-8") as r:
     requires = [i.strip() for i in r]
 
 with open("pyrogram/__init__.py", encoding="utf-8") as f:
-    version = 1
+    version = 2
 
 with open("README.md", encoding="utf-8") as f:
     readme = f.read()
