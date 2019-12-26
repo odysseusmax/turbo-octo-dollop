@@ -1980,6 +1980,9 @@ class Client(Methods, BaseClient):
             if isinstance(r, types.upload.File):
                     while True:
                         chunk = r.bytes
+                        
+                        if not chunk:
+                            break
 
                         yield chunk
                         
