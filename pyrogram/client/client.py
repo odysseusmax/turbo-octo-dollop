@@ -1983,6 +1983,9 @@ class Client(Methods, BaseClient):
                         
                         if not chunk:
                             break
+                        
+                        if len(chunk) < limit:
+                            break
 
                         yield chunk
                         
